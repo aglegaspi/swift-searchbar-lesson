@@ -17,6 +17,7 @@ import UIKit
 class PersonTVController: UITableViewController {
     
     @IBOutlet weak var searchBarOutlet: UISearchBar!
+    
     let persons = Person.allPeople
     
     override func viewDidLoad() {
