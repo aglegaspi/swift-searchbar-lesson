@@ -16,16 +16,15 @@ import UIKit
 
 class PersonTVController: UITableViewController {
     
+    @IBOutlet weak var searchBarOutlet: UISearchBar!
     let persons = Person.allPeople
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        searchBarOutlet.delegate = self
+        // this allows the delegate methods to update the Table View Controller
+    
     }
 
     // MARK: - Table view data source
@@ -101,4 +100,12 @@ class PersonTVController: UITableViewController {
     }
     */
 
+}
+
+extension PersonTVController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("hey you clicked me")
+    }
+    
 }
